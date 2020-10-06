@@ -14,13 +14,12 @@ void basic_dgemm(const int lda, const int M, const int N, const int K,
                  const double* restrict A, const double* restrict B, double* restrict C)
 {
     int i, j, k;
-    for (i = 0; i < M; ++i) {
-        for (j = 0; j < N; ++j) {
+    for (j = 0; j < N; ++j) {
+        for (k = 0; k < K; ++k) {
             double cij = C[j*lda+i];
-            for (k = 0; k < K; ++k) {
-                cij += A[k*lda+i] * B[j*lda+k];
+            for (i = 0; i < M; ++i) {
+                C[j*lda+i] += A[k*lda+i] * B[j*lda+k];
             }
-            C[j*lda+i] = cij;
         }
     }
 }
