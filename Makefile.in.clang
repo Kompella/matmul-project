@@ -1,5 +1,5 @@
 # Versions to build
-BUILDS=mine basic blocked blas
+BUILDS=mine basic blocked blas mine_blis
 
 # C compilers
 CC=clang
@@ -9,7 +9,7 @@ LD=clang
 PYTHON=python
 
 # Compiler optimization flags.  You will definitely want to play with these!
-OPTFLAGS = -O3 
+OPTFLAGS = -O3 -march=native -ffast-math -ftree-vectorize
 CFLAGS = -std=gnu99 -fopenmp
 FFLAGS =
 LDFLAGS = -fopenmp=libomp 

@@ -1,5 +1,5 @@
 # Versions to build
-BUILDS=mine mine_16 mine_32 basic blocked f2c blas
+BUILDS=mine mine_16 mine_32 basic blocked f2c blas mine_blis
 
 # C and Fortran compilers
 CC=gcc
@@ -10,7 +10,7 @@ LD=gfortran
 PYTHON=python
 
 # Compiler optimization flags.  You will definitely want to play with these!
-OPTFLAGS = -O3 -march=native -fopt-info-vec -fopt-info-vec-missed -ffast-math
+OPTFLAGS = -O3 -march=native -ftree-vectorize -ffast-math
 CFLAGS = -std=gnu99 
 FFLAGS =
 LDFLAGS = -fopenmp
