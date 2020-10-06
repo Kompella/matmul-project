@@ -1,7 +1,7 @@
 const char* dgemm_desc = "My awesome dgemm.";
 
 #ifndef BLOCK_SIZE
-#define BLOCK_SIZE ((int) 64)
+#define BLOCK_SIZE ((int) 32)
 #endif
 
 /*

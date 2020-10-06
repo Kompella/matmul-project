@@ -1,7 +1,7 @@
 const char* dgemm_desc = "My awesome dgemm.";
 
 #ifndef BLOCK_SIZE
-#define BLOCK_SIZE ((int) 64)
+#define BLOCK_SIZE ((int) 16)
 #endif
 
 /*
@@ -16,6 +16,7 @@ void basic_dgemm(const int lda, const int M, const int N, const int K,
     int i, j, k;
     for (j = 0; j < N; ++j) {
         for (k = 0; k < K; ++k) {
+            double cij = C[j*lda+i];
             for (i = 0; i < M; ++i) {
                 C[j*lda+i] += A[k*lda+i] * B[j*lda+k];
             }
