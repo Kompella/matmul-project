@@ -1,5 +1,5 @@
 # Versions to build
-BUILDS=mine basic blocked blas mine_blis
+BUILDS=mine basic blocked blas mine_blis mine2
 
 # C compilers
 CC=clang
